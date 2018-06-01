@@ -1,0 +1,6 @@
+<ul class="flex list pa0 charcoal">
+  <!-- Loop through the navigation items -->
+  {{#foreach navigation}}
+    <li class="ml3"><a href="{{url absolute="true"}}" class="db f6 b{{#if current}} active{{/if}}">{{label}}</a></li>
+  {{/foreach}}
+</ul>

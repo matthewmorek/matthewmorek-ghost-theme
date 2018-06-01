@@ -1,0 +1,89 @@
+@mixin button {
+  position: relative;
+  cursor: pointer;
+  border: 0;
+  border-radius: 3px;
+  font-family: $font-family;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 12px 0 rgba($brand-gunmetal, 0.15);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btn {
+  @include button;
+  display: inline-block;
+  padding: 0.75em 1em;
+  background-color: $brand-oxford-blue;
+  color: $white;
+  transition: opacity ease 0.3s;
+
+  &:visited {
+    color: inherit;
+    background-color: inherit;
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.btn-primary {
+  background-color: $brand-primary;
+  color: $white;
+}
+
+.btn-std {
+  background-color: $brand-gunmetal;
+  color: $white;
+}
+
+.btn-ghost {
+  @include button;
+  display: inline-block;
+  border-width: 2px;
+  border-style: solid;
+  border-color: $brand-gunmetal;
+  padding-left: 0.65rem;
+  padding-right: 0.4rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.45rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  box-shadow: none;
+  color: $brand-gunmetal;
+  background-color: $white;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin: 0;
+
+  &:hover {
+    background-color: $text-color;
+    border-color: $text-color;
+    color: $white;
+  }
+}
+
+a:link,
+a:visited {
+  &.btn {
+    @include button;
+    color: $white;
+    background-color: $brand-oxford-blue;
+  }
+}
+
+a:link,
+a:visited {
+  &.btn-primary {
+    background-color: $brand-primary;
+    color: $white;
+  }
+}

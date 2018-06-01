@@ -1,0 +1,72 @@
+// Variables
+// Project: matthewmorek.com
+// 2016 ©️ Matthew Morek
+
+$font-size:             1rem;
+$font-size-small:       0.875rem;
+$font-normal:           400;
+$font-bold:             600;
+$font-family:           "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$baseline:              1.500;
+
+$white:                 #ffffff;
+$black:                 #000000;
+$transparent:           rgba(0, 0, 0, 0);
+
+$grey-darkest:          #1c1c1c;
+$grey-darker:           #2c2e2f;
+$grey-dark:             #4a4a4a;
+$grey-base:             #8a8a8a;
+$grey-light:            #bababa;
+$grey-lighter:          #e6e6e6;
+$grey-lightest:         #f4f4f4;
+
+$brand-primary:         #3f88c5;
+$brand-alt:             #ffba08;
+$brand-oxford-blue:     #032b43;
+$brand-deep-green:      #136f63;
+$brand-boston-red:      #d00000;
+$brand-yankees-blue:    #1c3144;
+$brand-charcoal:        #304355;
+$brand-gunmetal:        #2d3142;
+
+$brand-success:         #558b6e;
+$brand-info:            #748699;
+$brand-warning:         #f6bd60;
+$near-white:            #f6f8fa;
+
+$body-bg:               #ffffff;
+$text-color:            $brand-charcoal;
+$link-color:            $brand-alt;
+$link-hover-color:      darken($link-color, 15%);
+
+$measure-vtight:        16em;
+$measure-tight:         24em;
+$measure-normal:        30em;
+$measure-loose:         34em;
+
+$spacing-unit:          0.25rem;
+
+$sm:                    32em;
+$md:                    48em;
+$lg:                    64em;
+$xl:                    72em;
+
+$project-container:     60em;
+
+$breakpoint-not-small:  "screen and (min-width: #{$sm})" !default;
+$breakpoint-medium:     "screen and (min-width: #{$md})" !default;
+$breakpoint-large:      "screen and (min-width: #{$lg})" !default;
+$breakpoint-xlarge:     "screen and (min-width: #{$xl})" !default;
+
+@mixin mq($viewport) {
+  @media screen and (min-width: $viewport) {
+    @content;
+  }
+}
+
+@mixin mq-custom($mq...) {
+  @media screen and ($mq) {
+    @content;
+  }
+}
