@@ -3,12 +3,12 @@
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
 {{#tag}}
-<header class="ml-auto mr-auto mw7 ph3 ph4-ns ph5-m mb1 mb2-ns mb3-m mt4 mt5-l">
-  <h1 class="f3 f2-m mv3 mw6">Posts on {{name}}</h1>
-  <p>{{description}}</p>
-  <div class="f7 ttu tracked b mv1 mv2-ns mb0 titanium">
-    <a href="{{@blog.url}}" class="b">← Back to index</a>
+<header class="ml-auto mr-auto mw7 ph3 ph4-ns ph5-m mt3 mt4-m flex flex-column">
+  <div class="f7 ttu tracked b mv1 mv2-ns mb0">
+    <a href="{{@blog.url}}" class="b no-underline">← Back to index</a>
   </div>
+  <h1 class="mv3 mw6">Posts on {{name}}</h1>
+  {{#if description}}<p>{{description}}</p>{{/if}}
 </header>
 {{/tag}}
 
