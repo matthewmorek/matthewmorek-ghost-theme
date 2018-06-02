@@ -5,27 +5,31 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
   {{!-- <div class="pt5 pb3 pb4-ns white bg-charcoal"{{#if @blog.cover_image}} style="background-image: url({{@blog.cover_image}})"{{/if}}> --}}
-  <div class="ml-auto mr-auto mw7 pb3 ph3 ph4-ns ph5-m flex flex-wrap justify-between">
-    <div class="f7 ttu tracked b mv1 mv2-ns mb0 titanium">
-      <a href="{{@blog.url}}" class="b">← Back to index</a>
-    </div>
-    <div class="dn db-ns f7 ttu tracked mv1 mv2-ns mb0">
-      {{#primary_tag}}
-      More in <a href="{{url}}" class="b">{{name}}</a>
-      {{/primary_tag}}
+  <div class="ml-auto mr-auto mw7 pb3 ph3 ph4-ns ph5-m mt3 mt4-m">
+    <div class="flex flex-wrap justify-between">
+      <div class="f7 ttu tracked b mv1 mv2-ns mb0">
+        <a href="{{@blog.url}}" class="b no-underline">← Back to index</a>
+      </div>
+      <div class="dn db-ns f7 ttu tracked mv1 mv2-ns mb0">
+        {{#primary_tag}}
+        More in <a href="{{url}}" class="b no-underline">{{name}}</a>
+        {{/primary_tag}}
+      </div>
     </div>
   </div>
 
   <article class="mw7 ml-auto mr-auto ph3 ph4-ns ph5-l">
-    {{#if feature_image}}
-    <figure>
-      <img src="{{feature_image}}" alt="{{primary_tag.name}}" class="db">
-    </figure>
-    {{/if}}
+    <div class="ph3-m ph4-l content">
+      {{#if feature_image}}
+      <figure>
+        <img src="{{feature_image}}" alt="{{primary_tag.name}}" class="db">
+      </figure>
+      {{/if}}
 
-    <h1 class="f3 f2-m mw7">{{title}}</h1>
+      <h1 class="f3 f2-m mw7 pr3-m pr4-l">{{title}}</h1>
 
-    {{content}}
+      {{content}}
+    </div>
 
   </article>
 
@@ -33,13 +37,19 @@ into the {body} of the default.hbs template --}}
   {{!-- {{#if primary_tag}} --}}
   <aside class="ml-auto mr-auto mw7 mt4 mt5-m ph3 ph4-ns pv4-m flex flex-wrap justify-center bt b--light-gray bw1">
     {{#next_post}}
-    <div class="w-50-m">
-      {{> "post-card-sm"}}
+    <div class="w-50-m ph3 ph4-m flex flex-column justify-center">
+      <span class="ttu tracked f7 charcoal normal o-80 db">Next post</span>
+      <a href="{{url}}" class="db">
+        <h2 class="f4 mv0">{{title}}</h2>
+      </a>
     </div>
     {{/next_post}}
     {{#prev_post}}
-    <div class="w-50-m">
-      {{> "post-card-sm"}}
+    <div class="w-50-m ph3 ph4-m flex flex-column justify-center">
+      <span class="ttu tracked f7 charcoal normal o-80 db">Previous post</span>
+      <a href="{{url}}" class="db">
+        <h2 class="f4 mv0">{{title}}</h2>
+      </a>
     </div>
     {{/prev_post}}
   </aside>
