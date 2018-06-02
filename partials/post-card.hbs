@@ -41,20 +41,35 @@
   </div>
 </article> --}}
 
-<article class="mv3 mv4-l{{#if feature_image}} flex-m{{/if}}{{#if featured}} pv1 nl3 nr3 nl4-m nr4-m ph3 ph4-m bg-near-white br2{{/if}}">
+<article class="post-card mv3 mv4-l{{#if featured}} pv2 nl3 nr3 nl4-m nr4-m ph3 ph4-m bg-near-white br2{{/if}}">
+  {{#if feature_image}}<div class="flex-m">{{/if}}
+    {{#if feature_image}}
+      <a class="flex items-center w-40-m" href="{{url}}">
+        <picture class="overflow-hidden">
+          <img src="{{feature_image}}" alt="{{title}}">
+        </picture>
+      </a>
+    {{/if}}
 
-  {{#if feature_image}}
-    <a class="flex items-center w-35-m" href="{{url}}">
-      <picture class="overflow-hidden">
-        <img src="{{feature_image}}" alt="{{title}}">
-      </picture>
-    </a>
-  {{/if}}
+    <div class="{{#if feature_image}}w-60-m pl3-m pl4-l{{else}} w-100{{/if}} flex flex-column justify-center">
+      <section class="f7 ttu tracked mt3">
+        <time datetime="{{date format='YYYY-MM-DD'}}"></time>
+        {{#primary_tag}}<a href="{{url}}" class="normal no-underline">{{name}}</a>{{/primary_tag}}
+      </section> 
+      <h2 class="f3 mt1 mb2"><a href="{{url}}">{{title}}</a></h2>
+      <p>{{excerpt}}</p>
+      {{!-- <p class="mt2"><a class="btn-ghost" href="{{url}}">Read the article</a></p> --}}
+    </div>
 
-  <div class="{{#if feature_image}}w-65-m pl3-m pl4-l{{else}}w-100{{/if}} flex flex-column justify-center">
-    <h2 class="f3 mb1"><a href="{{url}}">{{title}}</a></h2>
-    <p>{{excerpt}}</p>
-    {{!-- <p class="mt2"><a class="btn-ghost" href="{{url}}">Read the article</a></p> --}}
-  </div>
+  {{#if feature_image}}</div>{{/if}}
+
+  <footer class="flex justify-between f7 ttu bt b--light-gray">
+    <div class="pv2">
+      {{reading_time}}
+    </div>
+    <div class="pv2">
+      <a href="{{url}}" class="no-underline">Read now</a>
+    </div>
+  </footer>
 
 </article>
