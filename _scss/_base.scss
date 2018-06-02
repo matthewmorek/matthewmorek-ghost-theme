@@ -74,6 +74,7 @@ figure {
   figcaption {
     color: $grey-dark;
     font-size: 0.875rem;
+    font-style: italic;
     border-top: 1px solid $grey-lighter;
     padding-top: 0.5rem;
     padding-left: 1rem;
@@ -112,9 +113,11 @@ hr {
 }
 
 .content {
-  * + h2 {
+  * + h2,
+  * + h3 {
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.25;
   }
 }
 
