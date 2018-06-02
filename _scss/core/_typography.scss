@@ -44,11 +44,11 @@ $typi: (
 );
 
 $typi-ms: (
-  null: 1.125,
-  sm: 1.25,
+  null: 1.2,
+  sm: 1.2,
   md: 1.25,
-  lg: 1.25,
-  xl: 1.333
+  lg: 1.333,
+  xl: 1.4
 );
 
 @include typi-init;
