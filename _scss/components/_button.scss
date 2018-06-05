@@ -48,26 +48,26 @@
   display: inline-block;
   border-width: 2px;
   border-style: solid;
-  border-color: $brand-gunmetal;
+  border-color: $brand-charcoal;
   padding-left: 0.65rem;
-  padding-right: 0.4rem;
+  padding-right: 0.65rem;
   padding-top: 0.5rem;
   padding-bottom: 0.45rem;
   border-radius: 3px;
   font-size: 0.75rem;
   box-shadow: none;
-  color: $brand-gunmetal;
-  background-color: $white;
+  color: $text-color;
+  background-color: transparent;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
-  line-height: 1;
+  line-height: 1.4;
   margin: 0;
 
   &:hover {
     background-color: $text-color;
     border-color: $text-color;
-    color: $white;
+    color: $brand-charcoal;
   }
 }
 

@@ -27,6 +27,7 @@ $brand-oxford-blue:     #032b43;
 $brand-deep-green:      #136f63;
 $brand-boston-red:      #d00000;
 $brand-yankees-blue:    #1c3144;
+$brand-pastel-blue:     #d1d8dc;
 $brand-charcoal:        #304355;
 $brand-black-coral:     #59656f;
 $brand-gunmetal:        #2d3142;
@@ -36,8 +37,9 @@ $brand-info:            #748699;
 $brand-warning:         #f6bd60;
 $near-white:            #f6f8fa;
 
-$body-bg:               #ffffff;
-$text-color:            $brand-charcoal;
+$body-bg:               $brand-yankees-blue;
+$text-color:            $near-white;
+$link-color:            $brand-alt;
 
 $measure-vtight:        16em;
 $measure-tight:         24em;
