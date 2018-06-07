@@ -1,1 +1,10 @@
-<svg viewBox="0 0 512 512" width="512" height="512" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 1 480 114)"><path d="m0 0h128l160.301 284h-128z" fill="#66505c"/><path d="m160 0h128l160.301 284h-128z" fill="#66505c"/><g fill="#423c4d"><path d="m0 0h128v284h-128z"/><path d="m160 0h128v284h-128z"/></g></g></svg>
+<svg class="db" viewBox="0 0 512 512" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" fill-rule="evenodd" transform="matrix(-1 0 0 1 480 114)">
+    <path d="m0 0h128l160.301 284h-128z" fill="#8c9ea9"/>
+    <path d="m160 0h128l160.301 284h-128z" fill="#8c9ea9"/>
+    <g fill="#d1d8dc">
+      <path d="m0 0h128v284h-128z"/>
+      <path d="m160 0h128v284h-128z"/>
+    </g>
+  </g>
+</svg>
