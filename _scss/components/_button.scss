@@ -19,8 +19,8 @@
   @include button;
   display: inline-block;
   padding: 0.75em 1em;
-  background-color: $brand-oxford-blue;
-  color: $white;
+  background-color: $white;
+  color: $brand-oxford-blue;
   transition: opacity ease 0.3s;
 
   &:visited {
@@ -34,8 +34,8 @@
 }
 
 .btn-primary {
-  background-color: $brand-primary;
-  color: $white;
+  background-color: $brand-alt;
+  color: $brand-charcoal;
 }
 
 .btn-std {

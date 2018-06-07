@@ -51,7 +51,7 @@
 
 .input-std {
   font-family: $font-family;
-  border: 2px solid lighten($brand-gunmetal, 25%);
+  border: 2px solid $white;
   border-radius: 3px;
   background-color: $white;
   appearance: none;
@@ -62,7 +62,7 @@
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
   width: 100%;
-  color: $text-color;
+  color: $brand-gunmetal;
 
   &::placeholder {
     color: $brand-gunmetal;
