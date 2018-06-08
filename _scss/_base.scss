@@ -76,7 +76,7 @@ figure {
     color: $text-color;
     font-size: 0.875rem;
     font-style: italic;
-    border-top: 1px solid $grey-lighter;
+    border-top: 2px solid $brand-charcoal;
     padding-top: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -97,6 +97,7 @@ blockquote {
   margin-bottom: 1.5rem;
   padding-left: 1rem;
   font-size: 1.25rem;
+  font-style: italic;
   line-height: 1.4;
   max-width: $measure-normal;
 }
