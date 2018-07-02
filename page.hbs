@@ -4,20 +4,7 @@
 into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
-  {{!-- <div class="pt5 pb3 pb4-ns white bg-charcoal"{{#if @blog.cover_image}} style="background-image: url({{@blog.cover_image}})"{{/if}}> --}}
-  <div class="ml-auto mr-auto mw7 ph3 ph4-ns ph5-m mv3 mv4-l">
-    <div class="flex flex-wrap justify-between">
-      <div class="f7 ttu tracked b">
-        <a href="{{@blog.url}}" class="b no-underline">← Back to index</a>
-      </div>
-      <div class="dn db-ns f7 ttu tracked">
-        {{#primary_tag}}
-        More in <a href="{{url}}" class="b no-underline">{{name}}</a>
-        {{/primary_tag}}
-      </div>
-    </div>
-  </div>
-
+  
   <article class="mw7 ml-auto mr-auto mb3 mb4-m ph3 ph4-ns ph5-m overflow-hidden">
     <div class="ph3-m ph4-l content">
       {{#if feature_image}}
@@ -26,7 +13,7 @@ into the {body} of the default.hbs template --}}
       </figure>
       {{/if}}
 
-      <h1 class="lh-title mw7 pastel-blue">{{title}}</h1>
+      <h1 class="f2 f1-m lh-title mw7 pastel-blue">{{title}}</h1>
 
       {{content}}
     </div>
