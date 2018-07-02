@@ -1,48 +1,38 @@
 {{!< default}}
+
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
-
-{{!-- The big featured header, it uses blog cover image as a BG if available --}}
-<header class="site-header outer">
-    <div class="inner">
-        {{> "header"}}
-    </div>
-</header>
-
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
-
-<main id="site-main" class="site-main outer">
-    <div class="inner">
-
-        <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
-
-            <header class="post-full-header">
-                <h1 class="post-full-title">{{title}}</h1>
-            </header>
-
-            {{#if feature_image}}
-            <figure class="post-full-image" style="background-image: url({{feature_image}})">
-            </figure>
-            {{/if}}
-
-            <section class="post-full-content">
-                {{content}}
-            </section>
-
-        </article>
-
+  {{!-- <div class="pt5 pb3 pb4-ns white bg-charcoal"{{#if @blog.cover_image}} style="background-image: url({{@blog.cover_image}})"{{/if}}> --}}
+  <div class="ml-auto mr-auto mw7 ph3 ph4-ns ph5-m mv3 mv4-l">
+    <div class="flex flex-wrap justify-between">
+      <div class="f7 ttu tracked b">
+        <a href="{{@blog.url}}" class="b no-underline">← Back to index</a>
+      </div>
+      <div class="dn db-ns f7 ttu tracked">
+        {{#primary_tag}}
+        More in <a href="{{url}}" class="b no-underline">{{name}}</a>
+        {{/primary_tag}}
+      </div>
     </div>
-</main>
+  </div>
+
+  <article class="mw7 ml-auto mr-auto mb3 mb4-m ph3 ph4-ns ph5-m overflow-hidden">
+    <div class="ph3-m ph4-l content">
+      {{#if feature_image}}
+      <figure class="mt0 nl3 nr3 nl4-l nr4-l">
+        <img src="{{feature_image}}" alt="{{primary_tag.name}}" class="db">
+      </figure>
+      {{/if}}
+
+      <h1 class="lh-title mw7 pastel-blue">{{title}}</h1>
+
+      {{content}}
+    </div>
+
+  </article>
 
 {{/post}}
 
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
-{{#contentFor "scripts"}}
-<script>
-$(function() {
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-});
-</script>
-{{/contentFor}}
+{{> "book-consultation"}}
