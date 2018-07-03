@@ -4,53 +4,61 @@ It's a good idea to keep this template as minimal as possible in terms of both f
 --}}
 
 <!DOCTYPE html>
-<html>
+<html lang="{{lang}}">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{{meta_title}}</title>
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+
+  {{!-- Document Settings --}}
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  {{!-- Base Meta --}}
+  <title>{{meta_title}}</title>
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {{!-- Styles'n'Scripts --}}
+  <link href="{{asset "css/styles.css"}}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,800,800i" rel="stylesheet">
+
+  {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+  {{ghost_head}}
+
 </head>
-<body class="error-template">
-    <div class="site-wrapper">
+<body class="{{body_class}}" id="body">
 
-        <header class="site-header outer {{#if feature_image}}" style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}">
-            <div class="inner">
-                <nav class="site-nav-center">
-                    {{#if @blog.logo}}
-                        <a class="site-nav-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
-                    {{else}}
-                        <a class="site-nav-logo" href="{{@blog.url}}">{{@blog.title}}</a>
-                    {{/if}}
-                </nav>
-            </div>
-        </header>
+  {{> "header"}}
 
-        <main id="site-main" class="site-main outer">
-            <div class="inner">
+  <main>
 
-                <section class="error-message">
-                    <h1 class="error-code">{{code}}</h1>
-                    <p class="error-description">{{message}}</p>
-                    <a class="error-link" href="{{@blog.url}}">Go to the front page →</a>
-                </section>
-            </div>
-        </main>
+    <section class="mw6 ml-auto mr-auto mb3 mb4-m ph3 ph4-ns ph5-m mv4-m mv5-l overflow-hidden content tc">
+      <p class="f1 mv0">👻</p>
+      <h1 class="mt1 mb3">Page Not Found</h1>
+      <p class="f4">That thing you were looking for is <strong>not</strong> here. It could have been moved, removed, or was never there in the first place.</p>
+      <p><a href="{{@blog.url}}" class="btn btn-primary">Try the homepage &rarr;</a></p>
+    </section>
 
-        {{#get "posts" limit="3"}}
-        <aside class="outer">
-            <div class="inner">
-                <div class="post-feed">
-                    {{#foreach posts}}
-                        {{> "post-card"}}
-                    {{/foreach}}
-                </div>
-            </div>
-        </aside>
-        {{/get}}
+    {{#get "posts" limit="2"}}
+    <aside class="ml-auto mr-auto mw7 mt4 mt5-m ph3 ph4-ns pv4-m flex-m bt b--charcoal bw1">
+      {{#foreach posts}}
+      <div class="w-50-m mv3 mt0-m mb1-m ph4-m">
+        <a href="{{url}}" class="db">
+          <h2 class="f4 mv0">{{title}}</h2>
+        </a>
+      </div>
+      {{/foreach}}
+    </aside>
+    {{/get}}
 
-    </div>
+  </main>
+
+  {{> "footer"}}
+
+  {{!-- <script src="{{asset "js/bundle.js"}}"></script> --}}
+  {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+  {{{block "scripts"}}}
+
+  {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+  {{ghost_foot}}
+
 </body>
 </html>
