@@ -1,17 +1,17 @@
 {{!-- Email subscribe form at the bottom of the page --}}
 {{#if @labs.subscribers}}
-<section class="pv3 pv4-ns bt b--charcoal bw2">
-  <div class="ml-auto mr-auto mw7 ph4 ph5-m flex-m flex-wrap-m">
-    <div class="w-60-m pr4-m flex flex-column justify-center">
+<section class="pv3 bt b--yk-blue bw2">
+  <div class="ph3-m ph4-l pv2 flex-l flex-wrap-l">
+    <div class="w-60-l pr4-m flex flex-column justify-center">
     {{#is "index"}}
-      <h2 class="mb2 pastel-blue">The Rabbit Hole</h2>
-      <p class="f4 titanium">Five <span class="underline b">curated</span>, thought-provoking articles on <strong class="underline">product design</strong>, delivered to your inbox <span class="underline b">every Thursday</span>.</p>
+      <h2 class="mb2 pastel-blue lh-title">The Rabbit Hole</h2>
+      <p class="f5 f4-m titanium">Five <span class="underline b">curated</span>, thought-provoking articles on <strong class="underline">product design</strong>, delivered to your inbox <span class="underline b">every Thursday</span>.</p>
     {{else}}
       <h2 class="mb2 pastel-blue">Hungry for more?</h2>
-      <p class="f4 titanium">Get five <span class="underline b">curated</span>, thought-provoking articles on <strong class="underline">product design</strong>, delivered to your inbox <span class="underline b">every Thursday</span>.</p>
+      <p class="f5 f4-m titanium">Get five <span class="underline b">curated</span>, thought-provoking articles on <strong class="underline">product design</strong>, delivered to your inbox <span class="underline b">every Thursday</span>.</p>
     {{/is}}
     </div>
-    <div class="w-40-m flex flex-column justify-center">
+    <div class="w-40-l flex flex-column justify-center">
       <form action="https://www.getrevue.co/profile/matthewmorek/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank" class="mv2">
         <div class="mv2">
           <label for="member_email" class="db f7 mt3 mb1 lh-title">Email address</label>
@@ -20,7 +20,7 @@
         <div class="mv2">
           <input value="Subscribe" name="member[subscribe]" id="member_submit" type="submit" class="btn btn-primary w-100" data-event="Click: Subscribe">
         </div>
-        <p class="f7 tc pastel-blue">No bullshit. Unsubscribe anytime.</p>
+        <p class="f7 tc pastel-blue mb2">No bullshit. Unsubscribe anytime.</p>
       </form>
     </div>
   </div>

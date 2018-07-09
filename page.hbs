@@ -5,15 +5,15 @@ into the {body} of the default.hbs template --}}
 {{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
   
-  <article class="mw7 ml-auto mr-auto mb3 mb4-m ph3 ph4-ns ph5-m overflow-hidden">
-    <div class="ph3-m ph4-l content">
+  <article class="mv3 mv4-m overflow-hidden">
+    <div class="content">
       {{#if feature_image}}
       <figure class="mt0 nl3 nr3 nl4-l nr4-l">
         <img src="{{feature_image}}" alt="{{primary_tag.name}}" class="db">
       </figure>
       {{/if}}
 
-      <h1 class="f2 f1-m lh-title mw7 pastel-blue">{{title}}</h1>
+      <h1 class="f2 f1-m lh-title mw7 normal">{{title}}</h1>
 
       {{content}}
     </div>

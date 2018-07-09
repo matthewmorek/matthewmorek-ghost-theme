@@ -1,6 +1,6 @@
-<ul class="flex list pa0 charcoal">
+<ul class="list pa0 mt0 mb2 mv2-l charcoal flex flex-column-m">
   <!-- Loop through the navigation items -->
   {{#foreach navigation}}
-    <li class="ml3"><a href="{{url absolute="true"}}" class="db f6 b{{#if current}} active{{/if}}" data-event="Header: Clicked \'{{label}}\'">{{label}}</a></li>
+    <li class="mr2 mr0-m mv0 mv1-m"><a href="{{url absolute="true"}}" class="db f4-l pv1-l tc-m {{#if current}} active{{/if}}" data-event="Header: Clicked \'{{label}}\'">{{label}}</a></li>
   {{/foreach}}
 </ul>

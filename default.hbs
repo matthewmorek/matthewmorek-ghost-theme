@@ -13,24 +13,26 @@
 
   {{!-- Styles'n'Scripts --}}
   <link href="{{asset "css/styles.css"}}" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,800,800i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i" rel="stylesheet">
 
   {{!-- This tag outputs SEO meta+structured data and other important settings --}}
   {{ghost_head}}
 
 </head>
-<body class="{{body_class}}" id="body">
+<body class="{{body_class}} flex-m vh-100" id="body">
 
   {{> "header"}}
 
-  <main>
+  <main class="overflow-y-auto w-100">
 
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-    {{{body}}}
+    <div class="ml-auto mr-auto mw7 ph3 ph4-m pl5-l w-100">
+      {{{body}}}
+
+      {{>footer}}
+    </div>
 
   </main>
-
-  {{> "footer"}}
 
   {{!-- <script src="{{asset "js/bundle.js"}}"></script> --}}
   {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}

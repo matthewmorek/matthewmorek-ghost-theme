@@ -24,34 +24,36 @@ It's a good idea to keep this template as minimal as possible in terms of both f
   {{ghost_head}}
 
 </head>
-<body class="{{body_class}}" id="body">
+<body class="{{body_class}} flex-m vh-100 items-center" id="body">
 
   {{> "header"}}
 
-  <main>
+  <main class="overflow-y-auto w-100">
 
-    <section class="mw6 ml-auto mr-auto mb3 mb4-m ph3 ph4-ns ph5-m mv4-m mv5-l overflow-hidden content tc">
-      <p class="f1 mv0">👻</p>
-      <h1 class="mt1 mb3">Page Not Found</h1>
-      <p class="f4">That thing you were looking for is <strong>not</strong> here. It could have been moved, removed, or was never there in the first place.</p>
-      <p><a href="{{@blog.url}}" class="btn btn-primary">Try the homepage &rarr;</a></p>
-    </section>
+    <div class="mw7 ml-auto mr-auto w-100">
+      <section class="mb3 mb4-m ph3 ph4-ns ph5-m mv4-m mv5-l overflow-hidden content tc">
+        <p class="f1 mv0">👻</p>
+        <h1 class="mt1 mb3">Page Not Found</h1>
+        <p class="f4">That thing you were looking for is <strong>not</strong> here. It could have been moved, removed, or was never there in the first place.</p>
+        <p><a href="{{@blog.url}}" class="btn btn-primary">Try the homepage &rarr;</a></p>
+      </section>
 
-    {{#get "posts" limit="2"}}
-    <aside class="ml-auto mr-auto mw7 mt4 mt5-m ph3 ph4-ns pv4-m flex-m bt b--charcoal bw1">
-      {{#foreach posts}}
-      <div class="w-50-m mv3 mt0-m mb1-m ph4-m">
-        <a href="{{url}}" class="db">
-          <h2 class="f4 mv0">{{title}}</h2>
-        </a>
-      </div>
-      {{/foreach}}
-    </aside>
-    {{/get}}
+      {{#get "posts" limit="2" as |post|}}
+      <aside class="ml-auto mr-auto mw7 mt4 mt5-m ph3 ph4-ns pv4-m flex-m bt b--yk-blue bw1">
+        {{#foreach posts}}
+        <div class="w-50-m mv3 mt0-m mb1-m ph4-m">
+          <a href="{{url}}" class="db">
+            <h2 class="f4 mv0">{{title}}</h2>
+          </a>
+        </div>
+        {{/foreach}}
+      </aside>
+      {{/get}}
+
+      {{>footer}}
+    </div>
 
   </main>
-
-  {{> "footer"}}
 
   {{!-- <script src="{{asset "js/bundle.js"}}"></script> --}}
   {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}

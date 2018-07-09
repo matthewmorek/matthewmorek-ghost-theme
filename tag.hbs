@@ -3,8 +3,8 @@
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
 {{#tag}}
-<header class="ml-auto mr-auto mw7 ph3 ph4-ns ph5-m mt3 mt4-m flex flex-column">
-  <div class="f7 ttu tracked b mv1 mv2-ns mb0">
+<header class="mt3 mt4-m flex flex-column">
+  <div class="f7 ttu tracked b">
     <a href="{{@blog.url}}" class="b no-underline">← Back to index</a>
   </div>
   <h1 class="mv3 mw6 pastel-blue">Posts on {{name}}</h1>
@@ -13,14 +13,14 @@
 {{/tag}}
 
 {{!-- The main content area --}}
-<main class="ml-auto mr-auto mw7 ph3 ph4-ns ph5-m">
+<div>
   {{#foreach posts}}
 
     {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
     {{> "post-card"}}
 
   {{/foreach}}
-</main>
+</div>
 
 {{pagination}}
 
