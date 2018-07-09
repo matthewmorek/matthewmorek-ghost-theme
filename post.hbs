@@ -18,19 +18,16 @@ into the {body} of the default.hbs template --}}
     </div>
   </div>
 
-  <article class="overflow-hidden">
-    <div class="ph3-m ph4-l content">
-      {{#if feature_image}}
-      <figure class="mt0 nl3 nr3 nl4-l nr4-l">
-        <img src="{{feature_image}}" alt="{{primary_tag.name}}" class="db">
-      </figure>
-      {{/if}}
+  <article class="ph3-m ph4-l content">
+    {{#if feature_image}}
+    <figure class="mt0 nl3 nr3 nl4-l nr4-l">
+      <img src="{{feature_image}}" alt="{{primary_tag.name}}" class="db">
+    </figure>
+    {{/if}}
 
-      <h1 class="lh-title mw7">{{title}}</h1>
+    <h1 class="lh-title mw7">{{title}}</h1>
 
-      {{content}}
-    </div>
-
+    {{content}}
   </article>
 
   {{!-- Links to Previous/Next posts --}}
