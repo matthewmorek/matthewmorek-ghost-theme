@@ -1,6 +1,6 @@
 {
   "name": "matthewmorek-ghost-theme",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": true,
   "description": "Branded custom theme for Ghost",
   "main": "index.hbs",
