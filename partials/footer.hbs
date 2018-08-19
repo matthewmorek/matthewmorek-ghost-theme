@@ -4,7 +4,7 @@
       {{#get "users" limit="1" email="matthewmorek@me.com" as |user|}}
         {{#user}}
           <img src="{{img_url profile_image}}" alt="{{name}}" class="br-100 dib profile-pic">
-          <p class="mv2 f6 measure-tight"><span class="b">{{name}}</span> {{{bio}}}</p>
+          <p class="mv2 f6 measure-tight">{{{bio}}}</p>
         {{/user}}
       {{/get}}
     </div>
