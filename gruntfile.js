@@ -11,6 +11,7 @@ module.exports = function (grunt) {
 
   // Load production tasks by default
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-sass');
@@ -21,6 +22,20 @@ module.exports = function (grunt) {
     'assets/css',
     'assets/js'
   ]);
+
+  grunt.config('compress', {
+    main: {
+      options: {
+        archive: grunt.config('pkg').name + '.zip'
+      },
+      files: [
+        { expand: true, cwd: 'assets/', src: ['**'], dest: 'assets/' },
+        { expand: true, cwd: 'partials/', src: ['**'], dest: 'partials/' },
+        { expand: true, cwd: './', src: ['*.hbs'], dest: './'},
+        { src: ['./package.json'], dest: './', filter: 'isFile'},
+      ]
+    }
+  });
 
   grunt.config('uglify', {
     options: {
@@ -135,6 +150,6 @@ module.exports = function (grunt) {
     grunt.registerTask('build', ['clean', 'sass:dev', 'postcss:dev', 'eslint', 'uglify:dev']);
   }
 
-  grunt.registerTask('dist', ['clean', 'sass:dist', 'postcss:dist', 'uglify:dist']);
+  grunt.registerTask('dist', ['clean', 'sass:dist', 'postcss:dist', 'uglify:dist', 'compress']);
   grunt.registerTask('default', ['build']);
 };
