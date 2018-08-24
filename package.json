@@ -4,9 +4,7 @@
   "private": true,
   "description": "Branded custom theme for Ghost",
   "main": "index.hbs",
-  "engines": {
-    "ghost": ">=1.0.0"
-  },
+  "keywords": ["ghost-theme"],
   "scripts": {
     "postinstall": "grunt dist",
     "clean": "grunt clean",
